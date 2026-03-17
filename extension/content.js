@@ -19,7 +19,7 @@ function isPromotedPost(el) {
   if (!hasDescendant(el, (n) => n.tagName === "H2")) return false;
   return hasDescendant(
     el,
-    (n) => n.tagName === "P" && n.textContent.trim() === "Promoted",
+    (n) => n.tagName === "P" && /^Promoted\b/.test(n.textContent.trim()),
   );
 }
 
